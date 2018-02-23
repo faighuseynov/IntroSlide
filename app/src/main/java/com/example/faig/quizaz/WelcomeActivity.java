@@ -1,4 +1,4 @@
-package com.example.faig.introslide;
+package com.example.faig.quizaz;
 
 import android.content.Context;
 import android.content.Intent;
@@ -18,9 +18,6 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-/**
- * Created by umesh on 25-02-2017.
- */
 public class WelcomeActivity extends AppCompatActivity {
 
     private ViewPager viewPager;

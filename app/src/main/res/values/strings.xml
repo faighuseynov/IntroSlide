@@ -1,19 +1,10 @@
 <resources>
-    <string name="app_name">IntroSlide</string>
+    <string name="app_name">QuizAz</string>
     <string name="title_activity_welcome">Home Screen</string>
     <string name="next">NÖVBƏTİ</string>
     <string name="skip">KEÇ</string>
     <string name="start">QOŞUL</string>
-
     <string name="slide_1_title">oxumalısan telefonunsa səni özünə çəkir? QuizAZ-a qoşul</string>
-    <string name="slide_1_desc">Set your daily workout routine by the help of trainer</string>
-
     <string name="slide_2_title">özünü sına dostlarınla yarış </string>
-    <string name="slide_2_desc">Learn about the different meditation techniques and practice them</string>
-
     <string name="slide_3_title">zamanını əyləncəli və faydalı keçir</string>
-    <string name="slide_3_desc">Make your diet chart by the help of health experts</string>
-
-    <string name="play_again_desc">To see the welcome slider again, goto Settings -> apps -> welcome slider -> clear data</string>
-    <string name="play_again">Play Again</string>
 </resources>

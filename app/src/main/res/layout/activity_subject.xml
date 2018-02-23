@@ -5,17 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bg"
-    tools:context="com.example.faig.quizaz.MainActivity">
-
-
-
+    tools:context="com.example.faig.quizaz.SubjectActivity">
     <RelativeLayout
         android:id="@+id/relativeLayout"
         android:layout_width="0dp"
         android:layout_height="53dp"
         android:layout_marginBottom="128dp"
         android:background="@android:color/black"
-        app:layout_constraintBottom_toTopOf="@+id/gridView"
+        app:layout_constraintBottom_toTopOf="@+id/subjectGridView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -31,7 +28,7 @@
     </RelativeLayout>
 
     <GridView
-        android:id="@+id/gridView"
+        android:id="@+id/subjectGridView"
         android:layout_width="359dp"
         android:layout_height="0dp"
         android:layout_alignParentBottom="true"
@@ -44,8 +41,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.753"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/relativeLayout" />
+        app:layout_constraintTop_toBottomOf="@+id/relativeLayout">
 
-
+    </GridView>
 
 </android.support.constraint.ConstraintLayout>

@@ -1,4 +1,4 @@
-package com.example.faig.introslide;
+package com.example.faig.quizaz;
 
 import org.junit.Test;
 

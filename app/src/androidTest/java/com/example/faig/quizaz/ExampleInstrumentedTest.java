@@ -1,4 +1,4 @@
-package com.example.faig.introslide;
+package com.example.faig.quizaz;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
