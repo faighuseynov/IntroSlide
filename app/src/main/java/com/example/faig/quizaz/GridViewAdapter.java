@@ -1,7 +1,6 @@
 package com.example.faig.quizaz;
 
 import android.content.Context;
-import android.support.constraint.ConstraintLayout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -56,7 +55,7 @@ public class GridViewAdapter extends BaseAdapter {
 
         if (convertView == null){
             final LayoutInflater inflater = LayoutInflater.from(context);
-            convertView = inflater.inflate(R.layout.category_layout,null);
+            convertView = inflater.inflate(R.layout.category_item,null);
         }
 
         //Creating a linear layout
@@ -73,11 +72,12 @@ public class GridViewAdapter extends BaseAdapter {
 
         //Creating a textview to show the title
         // TextView textView = new TextView(context);
+
         textView.setText(names.get(position));
 
         //Scaling the imageview
-        // networkImageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
-        networkImageView.setLayoutParams(new ConstraintLayout.LayoutParams(250,250));
+        //networkImageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
+     //   networkImageView.setLayoutParams(new ConstraintLayout.LayoutParams(250,250));
 
 
 

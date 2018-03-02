@@ -1,9 +1,14 @@
 package com.example.faig.quizaz;
 
+
 import android.app.ProgressDialog;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.GridView;
+
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
@@ -16,7 +21,14 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
-public class SubjectActivity extends AppCompatActivity {
+/**
+ * A simple {@link Fragment} subclass.
+ */
+
+
+public class SubjectFragment extends Fragment {
+
+
     public static final String URL = "https://api.myjson.com/bins/1ger21";
 
 
@@ -32,22 +44,32 @@ public class SubjectActivity extends AppCompatActivity {
     private ArrayList<String> names;
 
 
+
+
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_subject);
-        subjectGridView = (GridView) findViewById(R.id.subjectGridView);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+
+
+        View view = inflater.inflate(R.layout.fragment_subject,container,false);
+
+
+        subjectGridView = view.findViewById(R.id.subjectGridView);
 
         images = new ArrayList<>();
         names = new ArrayList<>();
 
-        //Calling the getData method
         getData();
+
+
+        return view;
     }
 
-    private void getData(){
+        //Calling the getData method
+     //   getData();
+    private void getData() {
         //Showing a progress dialog while our app fetches the data from url
-        final ProgressDialog loading = ProgressDialog.show(this, "Please wait...","Fetching data...",false,false);
+        final ProgressDialog loading = ProgressDialog.show(getActivity(), "Please wait...", "Fetching data...", false, false);
         //Toast.makeText(getApplicationContext(),"error",Toast.LENGTH_LONG).show();
 
         //Creating a json array request to get the json from our api
@@ -60,7 +82,7 @@ public class SubjectActivity extends AppCompatActivity {
                         loading.dismiss();
                         //  System.out.println(response);
                         //Displaying our grid
-                        showGrid(response);
+                         showGrid(response);
                     }
                 },
                 new Response.ErrorListener() {
@@ -71,9 +93,8 @@ public class SubjectActivity extends AppCompatActivity {
                     }
                 }
         );
-
         //Creating a request queue
-        RequestQueue requestQueue = Volley.newRequestQueue(this);
+        RequestQueue requestQueue = Volley.newRequestQueue(getActivity());
         //Adding our request to the queue
         requestQueue.add(jsonArrayRequest);
     }
@@ -93,7 +114,7 @@ public class SubjectActivity extends AppCompatActivity {
         }catch (JSONException e){
             e.printStackTrace();
         }
-        final GridViewAdapter gridViewAdapter = new GridViewAdapter(this,images,names);
+        final GridViewAdapter gridViewAdapter = new GridViewAdapter(getActivity(),images,names);
 
         //Adding adapter to gridview
         subjectGridView.setAdapter(gridViewAdapter);

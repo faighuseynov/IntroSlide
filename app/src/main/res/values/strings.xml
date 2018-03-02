@@ -7,4 +7,7 @@
     <string name="slide_1_title">oxumalısan telefonunsa səni özünə çəkir? QuizAZ-a qoşul</string>
     <string name="slide_2_title">özünü sına dostlarınla yarış </string>
     <string name="slide_3_title">zamanını əyləncəli və faydalı keçir</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
