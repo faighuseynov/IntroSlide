@@ -6,6 +6,7 @@ import android.os.Bundle;
 public class MainActivity extends AppCompatActivity {
 
 
+    CategoryFragment fragment = CategoryFragment.newInstance();
 
 
     @Override
@@ -13,13 +14,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-       CategoryFragment fragment = CategoryFragment.newInstance();
         FragmentManager fragmentManager = getSupportFragmentManager();
      if (fragment!=null){
        fragmentManager
                  .beginTransaction()
-                 .replace(R.id.fragment_container,fragment)
-                 .addToBackStack(null)
+                 .add(R.id.fragment_container,fragment)
                  .commit();
      }
 
@@ -34,7 +33,6 @@ public class MainActivity extends AppCompatActivity {
         if(getSupportFragmentManager().getBackStackEntryCount()>0){
 
         getSupportFragmentManager().popBackStack();
-
         }else {
 
             super.onBackPressed();

@@ -12,6 +12,8 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.FrameLayout;
 import android.widget.GridView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -55,6 +57,8 @@ public class CategoryFragment extends Fragment {
     //GridView Object
     private GridView gridView;
 
+    private TextView textView;
+
     //ArrayList for Storing image urls and titles
     private ArrayList<String> images;
     private ArrayList<String> names;
@@ -89,8 +93,7 @@ public class CategoryFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        images = new ArrayList<>();
-        names = new ArrayList<>();
+
     }
 
     @Override
@@ -99,6 +102,15 @@ public class CategoryFragment extends Fragment {
        View view = inflater.inflate(R.layout.fragment_category, container, false);
 
         gridView = (GridView)view.findViewById(R.id.gridView);
+        images = new ArrayList<>();
+        names = new ArrayList<>();
+        textView = view.findViewById(R.id.textView);
+        textView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getContext(),"error",Toast.LENGTH_LONG).show();
+            }
+        });
 
        return view;
     }
@@ -134,6 +146,8 @@ public class CategoryFragment extends Fragment {
 
     @Override
     public void onStop() {
+
+        //  ((FrameLayout)getView().findViewById(R.id.category_fragment)).removeView(getView().findViewById(R.id.category_fragment));
         super.onStop();
     }
 
@@ -142,6 +156,7 @@ public class CategoryFragment extends Fragment {
         super.onDetach();
         mListener = null;
     }
+
 
     /**
      * This interface must be implemented by activities that contain this
@@ -224,9 +239,10 @@ public void makeRequest(){
                         android.support.v4.app.FragmentManager fragmentManager = getFragmentManager();
                         fragmentManager
                                 .beginTransaction()
-                                .replace(R.id.category_fragment, subjectFragment)
+                                .replace(R.id.fragment_container, subjectFragment)
                                 .addToBackStack(null)
                                 .commit();
+                        // ((FrameLayout)getView().findViewById(R.id.category_fragment)).removeView(getView().findViewById(R.id.category_fragment));
                         break;
                 }
 
@@ -234,9 +250,7 @@ public void makeRequest(){
             }
 
 
-             });
-
-
+        });
 
    /* private boolean loadFragment(android.support.v4.app.Fragment fragment) {
         //switching fragment
